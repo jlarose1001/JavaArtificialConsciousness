@@ -2,6 +2,9 @@ package test;
 
 import javax.swing.SwingUtilities;
 
+import com.util.Task;
+import com.util.TaskScheduler;
+
 public class TestRunloop implements Runnable {
 	
 	public TestRunloop() {
@@ -14,7 +17,15 @@ public class TestRunloop implements Runnable {
 
 	@Override
 	public void run() {
-
+		@SuppressWarnings("resource")
+		TaskScheduler sc = new TaskScheduler();
+		sc.put(new Task());
+		sc.put(new Task());
+		sc.put(new Task());
+		sc.put(new Task());
+		for (Task object : sc) {
+			System.out.println(object.id.toString());
+		}
 	}
 
 }

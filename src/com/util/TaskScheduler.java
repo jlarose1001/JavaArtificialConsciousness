@@ -3,8 +3,8 @@ package com.util;
 import java.util.Collection;
 import java.util.Comparator;
 import java.util.Iterator;
-import java.util.LinkedList;
 import java.util.Optional;
+import java.util.concurrent.PriorityBlockingQueue;
 import java.util.function.BiConsumer;
 import java.util.function.BiFunction;
 import java.util.function.BinaryOperator;
@@ -22,7 +22,7 @@ import java.util.stream.IntStream;
 import java.util.stream.LongStream;
 import java.util.stream.Stream;
 
-public class TaskScheduler extends LinkedList<Task> implements Stream<Task> {
+public class TaskScheduler extends PriorityBlockingQueue<Task> implements Stream<Task> {
 
 	/**
 	 * 
